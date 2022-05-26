@@ -8,6 +8,7 @@
 #include <functional>
 #include <cassert>
 #include <cstdlib>
+#include <string>
 
 using namespace std;
 
@@ -52,9 +53,16 @@ int main() {
         in >> I;
         in >> File;
         getline(in, Data);
-        A = mapCVector[I]->createCVector(Data);
-        A->output(File.c_str());
-        delete A;
+        if (I == "Hori" || I == "hori" || I == "Vert" || I == "vert") {
+            A = mapCVector[I]->createCVector(Data);
+            A->output(File.c_str());
+            delete A;
+        }
+        else
+        {
+            cout<< "Error! Wrong type \n";
+            return-1;
+        }
     }
     in.close();
     return 0;

@@ -14,16 +14,6 @@ C:/4.2/CVector0.h
 CVector1.h
 C:/4.2/CVector1.h
 
-C:/4.2/CVector.cpp
-CVector.h
-C:/4.2/CVector.h
-CVector0.h
-C:/4.2/CVector0.h
-CVector1.h
-C:/4.2/CVector1.h
-sstream
--
-
 C:/4.2/CVector.h
 iostream
 -
@@ -66,5 +56,7 @@ functional
 cassert
 -
 cstdlib
+-
+string
 -
 
