@@ -53,11 +53,18 @@ int main() {
         in >> I;
         in >> File;
         getline(in, Data);
-        CVectorList.push_back(make_pair(mapCVector[I]->createCVector(Data), File));
+        if (I == "Hori" || I == "hori" || I == "Vert" || I == "vert") {
+            CVectorList.push_back(make_pair(mapCVector[I]->createCVector(Data), File));
+        }
+        else
+        {
+            cout<< "Error! Wrong type \n";
+            return-1;
+        }
     }
-    for (auto i : CVectorList)
+    for (auto& i : CVectorList)
     {
-        i.first->output(i.second);
+        i.first->output(i.second.c_str());
         delete i.first;
     }
     in.close();

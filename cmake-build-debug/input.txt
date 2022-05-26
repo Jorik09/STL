@@ -1,2 +1,2 @@
-Hari output.txt 1,2 1,3 4,4
+Hori output.txt 1,2 1,3 4,4
 Vert output.txt 1,1 3,3 4,4
