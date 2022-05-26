@@ -17,6 +17,7 @@ int main() {
 
     setlocale(LC_ALL, "rus");
 
+    vector <pair<CVector*, string>> CVectorList;
     map <string, CFabricVector*> mapCVector;
     mapCVector["Hori"] = new CFabricVector0;
     mapCVector["hori"] = new CFabricVector0;
@@ -46,23 +47,18 @@ int main() {
         return 1;
     while (!in.eof())
     {
-        CVector* A;
         string I;
         string File;
         string Data;
         in >> I;
         in >> File;
         getline(in, Data);
-        if (I == "Hori" || I == "hori" || I == "Vert" || I == "vert") {
-            A = mapCVector[I]->createCVector(Data);
-            A->output(File.c_str());
-            delete A;
-        }
-        else
-        {
-            cout<< "Error! Wrong type \n";
-            return-1;
-        }
+        CVectorList.push_back(make_pair(mapCVector[I]->createCVector(Data), File));
+    }
+    for (auto i : CVectorList)
+    {
+        i.first->output(i.second);
+        delete i.first;
     }
     in.close();
     return 0;
